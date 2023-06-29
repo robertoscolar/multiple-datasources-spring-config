@@ -1,0 +1,42 @@
+{"properties": [
+  {
+    "name": "spring.datasource.mysql.jdbc-url",
+    "type": "java.lang.String",
+    "description": "Connection String used to connect in MySQL Database"
+  },
+  {
+    "name": "spring.datasource.mysql.username",
+    "type": "java.lang.String",
+    "description": "Username used to connect in MySQL Database"
+  },
+  {
+    "name": "spring.datasource.mysql.password",
+    "type": "java.lang.String",
+    "description": "Password used to connect in MySQL Database"
+  },
+  {
+    "name": "spring.datasource.postgres.jdbc-url",
+    "type": "java.lang.String",
+    "description": "Connection String used to connect in PostgreSQL Database"
+  },
+  {
+    "name": "spring.datasource.postgres.username",
+    "type": "java.lang.String",
+    "description": "Username used to connect in PostgreSQL Database"
+  },
+  {
+    "name": "spring.datasource.postgres.password",
+    "type": "java.lang.String",
+    "description": "Password used to connect in PostgreSQL Database"
+  },
+  {
+    "name": "spring.datasource.mysql.driver-class-name",
+    "type": "java.lang.String",
+    "description": "Driver for MySQL connection"
+  },
+  {
+    "name": "spring.datasource.postgres.driver-class-name",
+    "type": "java.lang.String",
+    "description": "Driver for PostgreSQL connection"
+  }
+]}
