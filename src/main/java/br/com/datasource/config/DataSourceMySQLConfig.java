@@ -20,8 +20,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = "br.com.datasource.domain.repository.mysql",
-						entityManagerFactoryRef = "mysqlEntityManagerFactory",
-						transactionManagerRef = "mysqlTransactionManager")
+			entityManagerFactoryRef = "mysqlEntityManagerFactory",
+			transactionManagerRef = "mysqlTransactionManager")
 
 public class DataSourceMySQLConfig {
 
