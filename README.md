@@ -23,7 +23,6 @@ localizadas em `src/main/java/br/com/datasource/config`, como citado anteriormen
 
 **ATENÇÃO: Este nome não é obrigatório, apenas o nome que eu escolhi para as classes neste projeto**
 
-Ainda
 
 ## Como testar
 
