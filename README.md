@@ -25,7 +25,7 @@ usado nas classes são: `DataSourceBancoUsadoConfig`, como exemplo temos:
 
 <br>
 
-### Como funciona a classe de configuração do datasource
+## Como funciona a classe de configuração do datasource
 
 <br>
 
@@ -37,6 +37,8 @@ A anotação `@EnableTransactionManagement` habilita o suporte a transações, p
 
 A anotação `@EnableJpaRepositories` indica que as interfaces de repositório JPA devem ser ativadas para permitir o acesso aos dados no MySQL. Ela especifica o pacote base onde os repositórios estão localizados (`br.com.datasource.domain.repository.mysql`) e também faz referência ao `entityManagerFactoryRef` e ao `transactionManagerRef`.
 
+<br>
+
 A classe possui três métodos anotados com `@Bean`, que são responsáveis por configurar e fornecer os beans gerenciados pelo Spring:
 
 1. O método `mysqlDataSource()` configura e retorna um DataSource para o MySQL. Ele usa a anotação `@ConfigurationProperties` para definir as propriedades do banco de dados MySQL a serem lidas a partir do arquivo de propriedades do Spring (`application.properties`), utilizando o prefixo `spring.datasource.mysql`.
@@ -45,8 +47,12 @@ A classe possui três métodos anotados com `@Bean`, que são responsáveis por 
 
 3. O método `mysqlTransactionManager()` configura e retorna um `PlatformTransactionManager` para o MySQL. Ele recebe o `LocalContainerEntityManagerFactoryBean` configurado anteriormente como parâmetro e cria um `JpaTransactionManager` com base nesse `EntityManagerFactory`. O `JpaTransactionManager` é uma implementação do `PlatformTransactionManager` para uso com o JPA.
 
+<br>
+
 A anotação `@Primary` só é usada aqui porque o Spring precisa de um datasource que seja primário, caso contrário não funciona.
 Esse ponto é importante pois apenas uma das classes de configuração deve ter essa anotação.
+
+<br>
 
 ## Como testar
 
