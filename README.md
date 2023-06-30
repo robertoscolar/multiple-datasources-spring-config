@@ -3,13 +3,14 @@ Este é um projeto simples criado em Spring Boot, com o único intuito de exempl
 Por conta disso, só teremos duas entidades: `User` e `Department`. Cada uma usará um banco diferente.
 
 O principal motivo para o projeto é a consulta e cópia posterior das classes de configuração localizadas em `src/main/java/br/com/datasource/config` , 
-tendo em vista que os únicos pontos que mudarão para outras conexões serão as informações únicas de cada banco.
+tendo em vista que os únicos pontos que mudarão para outras conexões subsequentes serão as informações de conexão,
+estas sendo únicas para cada banco.
 
 
 ## Configurações
 Os dados dos datasources estão localizados no `application.properties`, dentro da pasta `resources`.
 
-Para o exemplo deste projeto escolhi os bancos `MySQL` e `PostgreSQL`, mas poderia ser qualquer incluindo não-relacionais.
+Para o exemplo deste projeto escolhi os bancos `MySQL` e `PostgreSQL`, mas poderia ser qualquer um, incluindo os não-relacionais.
 
 Para que a classe de configuração pegue a url e usuário corretos, geralmente é usado um prefixo para identificação, por exemplo:
 
