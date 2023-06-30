@@ -23,6 +23,23 @@ localizadas em `src/main/java/br/com/datasource/config`, como citado anteriormen
 
 **ATENÇÃO: Este nome não é obrigatório, apenas o nome que eu escolhi para as classes neste projeto**
 
+## Como funciona a Classe de Configuração
+
+Para a melhor compreensão dos itens usarei o DataSourceMySQLConfig como exemplo. Mas esteja ciente que o mesmo processo acontece pra ambas as classes.
+
+A anotação `@Configuration` indica que essa classe é uma configuração do Spring e define um ou mais beans que serão gerenciados pelo contêiner do Spring.
+
+A anotação `@EnableTransactionManagement` habilita o suporte a transações, permitindo que os métodos anotados com `@Transactional` executem dentro de uma transação.
+
+A anotação `@EnableJpaRepositories` indica que as interfaces de repositório JPA devem ser ativadas para permitir o acesso aos dados no MySQL. Ela especifica o pacote base onde os repositórios estão localizados (`br.com.datasource.domain.repository.mysql`) e também faz referência ao `entityManagerFactoryRef` e ao `transactionManagerRef`.
+
+A classe possui três métodos anotados com `@Bean`, que são responsáveis por configurar e fornecer os beans gerenciados pelo Spring:
+
+O método `mysqlDataSource()` configura e retorna um DataSource para o MySQL. Ele usa a anotação `@ConfigurationProperties` para definir as propriedades do banco de dados MySQL a serem lidas a partir do arquivo de propriedades do Spring (`application.properties`), utilizando o prefixo `spring.datasource.mysql`.
+
+O método `mysqlEntityManagerFactory()` configura e retorna um `LocalContainerEntityManagerFactoryBean` para o MySQL. Ele recebe o `DataSource` configurado anteriormente e um `EntityManagerFactoryBuilder` como parâmetros. O `EntityManagerFactoryBuilder` é usado para construir o `EntityManagerFactory` com base nas configurações fornecidas. Nesse método, é especificado o pacote base onde as entidades JPA estão localizadas (`br.com.datasource.domain.model.mysql`).
+
+O método `mysqlTransactionManager()` configura e retorna um `PlatformTransactionManager` para o MySQL. Ele recebe o `LocalContainerEntityManagerFactoryBean` configurado anteriormente como parâmetro e cria um `JpaTransactionManager` com base nesse `EntityManagerFactory`. O `JpaTransactionManager` é uma implementação do `PlatformTransactionManager` para uso com o JPA.
 
 ## Como testar
 
