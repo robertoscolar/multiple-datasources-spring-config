@@ -19,8 +19,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = "br.com.datasource.domain.repository.postgres",
-						entityManagerFactoryRef = "postgresEntityManagerFactory",
-						transactionManagerRef = "postgresTransactionManager")
+			entityManagerFactoryRef = "postgresEntityManagerFactory",
+			transactionManagerRef = "postgresTransactionManager")
 
 public class DataSourcePostgreSQLConfig {
 	
