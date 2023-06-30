@@ -6,6 +6,7 @@ O principal motivo para o projeto é a consulta e cópia posterior das classes d
 tendo em vista que os únicos pontos que mudarão para outras conexões subsequentes serão as informações de conexão,
 estas sendo únicas para cada banco.
 
+<br>
 
 ## Configurações
 Os dados dos datasources estão localizados no `application.properties`, dentro da pasta `resources`.
