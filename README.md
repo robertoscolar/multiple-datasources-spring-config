@@ -26,6 +26,21 @@ usado nas classes são: `DataSourceBancoUsadoConfig`, como exemplo temos:
 
 <br>
 
+## Arquitetura
+
+É importante notar que as entidades e repositórios têm 2 pacotes diferentes, uma para cada banco de dados.
+isso acontece para o Spring saber exatamente qual será a conexão usada para cada instância desse repositório
+e qual será a entidade a ser trabalhada.
+
+Com a classe configurada, o Spring saberá oque deve ser injetado quando receber a anotação
+`@Autowired`.
+
+No exemplo da aplicação, tudo que estiver dentro do pacote `mysql` dentro de 
+`src/main/java/br/com/datasource/model` e `src/main/java/br/com/datasource/repository` será gerenciado
+pela conexão do mysql, e a mesma coisa acontece pro outro, no caso o postgres.
+
+<br>
+
 ## Como funciona a classe de configuração do datasource
 
 <br>
