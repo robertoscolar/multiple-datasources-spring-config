@@ -30,7 +30,7 @@ usado nas classes são: `DataSourceBancoUsadoConfig`, como exemplo temos:
 ## Arquitetura
 
 É importante notar que as entidades e repositórios têm 2 pacotes diferentes, uma para cada banco de dados.
-isso acontece para o Spring saber exatamente qual será a conexão usada para cada instância desse repositório
+Isso acontece para o Spring saber exatamente qual será a conexão usada para cada instância desse repositório
 e qual será a entidade a ser trabalhada.
 
 Com a classe configurada, o Spring saberá oque deve ser injetado quando receber a anotação
@@ -117,3 +117,10 @@ que subir é só testar os endpoints:
     }
     
 
+## Tecnologias utilizadas
+
+- Java 17
+- Spring Boot 3.1.1
+- Lombok
+- MySQL
+- PostgreSQL
