@@ -75,21 +75,25 @@ Esse ponto é importante pois apenas uma das classes de configuração deve ter 
 
 Passo-a-passo:
 
-1. Para testar é necessário ter os bancos rodando na máquina local com o mesmo user e password do `application.properties` e ter os databases correspondentes criados:
+1. Para testar é necessário ter os bancos rodando na máquina local com o mesmo user e password do `application.properties`:
 
 > POSTGRESQL
 
-- Database: datasource_test
+- Database: postgres
 - Porta: 5432
 - User: postgres
 - Password: postgres
 
 > MYSQL
 
-- Database: datasource_test
+- Database: mysql
 - Porta: 3306
 - User: root
 - Password: root
+
+> Para uma configuração mais fácil dos bancos de dados, é disponibilizado o arquivo `docker-compose.yml`.
+> Para usá-lo, é só usar o comando `docker-compose up` no terminal, dentro da raiz do projeto.
+> Dessa forma o Docker configurará todos os bancos com os dados informados anteriormente.
 
 <br>
 <br>
@@ -115,7 +119,8 @@ que subir é só testar os endpoints:
     { 
       "name": "Roberto"
     }
-    
+
+> **A Collection estará disponível junto do código fonte na raiz do projeto.**
 
 ## Tecnologias utilizadas
 
